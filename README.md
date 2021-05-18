@@ -1,12 +1,15 @@
 # Audio Classification of the Content of Food Containers and Drinking Glasses
 
-Audio Content Classification (ACC) is our proposed method in the study: *Audio classification of the content of food containers and drinking glasses*.
-ACC is a convolutional-neural-network ensemble for estimating the type and level of content in a container, from the sound produced by an action of a person manipulating a container. It estimates the type and level jointly from a single class estimation, as a spectrogram classification task. ACC is designed to perform on the [CORSMAL Containers Manupulation dataset](http://corsmal.eecs.qmul.ac.uk/containers_manip.html) (CCM), but can be trained or estimate on other data. Additionally, we provide another set of [recordings](https://zenodo.org/) from a different setup for validation.
+Audio Content Classification (ACC) is our proposed method in the paper: *Audio classification of the content of food containers and drinking glasses*.
+ACC is a convolutional-neural-network ensemble for estimating the type and level of content in a container, from the sound produced by an action of a person manipulating a container. ACC estimates the type and level jointly from a single class estimation, as a spectrogram classification task. ACC is designed to perform on the [CORSMAL Containers Manupulation dataset](http://corsmal.eecs.qmul.ac.uk/containers_manip.html) (CCM), but can be trained or estimate on other data. Additionally, we provide another set of [recordings](https://zenodo.org/) from a different setup for validation.
 
 
 ![Alt text](acc_image.png)
 
-[[arXiv](https://arxiv.org/)][[webpage](http://corsmal.eecs.qmul.ac.uk/containers_manip.html)]
+[[arXiv](https://arxiv.org/)]
+[[webpage](http://corsmal.eecs.qmul.ac.uk/containers_manip.html)]
+[[pre-trained models](https://zenodo.org/record/4770061#.YKPJtCbTU5k)]
+[[CCM dataset](http://corsmal.eecs.qmul.ac.uk/containers_manip.html)]
 
 ## Installation
 
@@ -25,7 +28,7 @@ ACC is a convolutional-neural-network ensemble for estimating the type and level
 
 0. Clone repository
 
-<code>git clone https://github.com/CORSMAL/ACC/tree/release</code>
+<code>git clone https://github.com/CORSMAL/ACC</code>
 
 1. From a terminal or an Anaconda Prompt, go to project's root directory (<code>/acc-net</code>) and run: 
 
