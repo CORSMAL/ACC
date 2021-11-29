@@ -17,13 +17,13 @@ ACC is a convolutional-neural-network ensemble for estimating the type and level
 ### Requirements
 * python=3.8.3
 * librosa=0.8.0
-* numpy=1.18.5
-* pandas=1.1.3
-* scikit-image=0.17.2
-* scikit-learn=0.23.2
-* tensorflow=2.3.1
-* matplotlib-base=3.3.2
-* tikzplotlib=0.9.4
+* numpy=1.20.1
+* pandas=1.2.3
+* scikit-image=0.18.1
+* scikit-learn=0.24.1
+* tensorflow=2.3.0
+* matplotlib-base=3.3.4
+* tikzplotlib=0.9.8
 
 ### Instructions
 
