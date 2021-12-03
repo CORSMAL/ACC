@@ -26,7 +26,15 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #--------------------------------------------------------------------------------
+
+# 2020
 DATASET_PATH = 'D:/CCM_dataset/'
+
+# 2021
+NDATASET_PATH      = 'D:/CCM_dataset/CCM_2021/'
+NANNOTAT_PATH_JSON = 'D:/CCM_dataset/CCM_2021/ccm_train_annotation.json'
+NANNOTAT_PATH_CSV  = 'D:/CCM_dataset/CCM_2021/ccm_train_annotation.csv'
+
 OUTPUT_PATH  = 'outputs'
 
 # Audio features and general parameters
@@ -36,7 +44,7 @@ IMG_SIZE   = 96
 
 # MODEL PARAMETERS
 LEARNING_RATE = 0.001
-EPOCHS        = 100
+EPOCHS        = 3
 BATCH_SIZE    = 16
 
 # DEFAULT TRAINED MODEL NAMES

@@ -58,6 +58,7 @@ Arg model: Select the model to train or test. Available models:
     '''
 
 from scripts.data_loading import load_dataset
+from scripts.data_loader_2021 import load_dataset_2021
 from methods.processing.audio_processing import audio_processing
 from methods.processing.data_processing import prepare_train_data, prepare_test_data
 from scripts.model_build import raw_model, pretrained_model
@@ -78,6 +79,7 @@ if __name__ == '__main__':
 
 	parser.add_argument('--datapath', default=DATASET_PATH, type=str)
 	parser.add_argument('--outdir', default=OUTPUT_PATH, type=str)
+	parser.add_argument('--version', default=2020, type=int, choices=[2020, 2021])
 	parser.add_argument('--mode', default='test', type=str, choices=['train','test'])
 	parser.add_argument('--data_split', default='test', type=str, choices=['train','test','private_test','new_containers'])
 	parser.add_argument('--model', default='acc', type=str, choices=['acc','acc_action','acc_pouring','acc_shaking'])
@@ -88,6 +90,7 @@ if __name__ == '__main__':
 	dataset   = args.data_split
 	data_path = args.datapath
 	out_path  = args.outdir
+	y_version = args.version
 
 	if mode == 'train':
 		dataset = 'train'
@@ -97,7 +100,10 @@ if __name__ == '__main__':
 	print('Data path:\t{}\nOutput path:\t{}\n'.format(data_path, out_path))
 	
 	# Load data
-	df = load_dataset(data_path, dataset)
+	if y_version == 2021:
+		df = load_dataset_2021(data_path, dataset)
+	else: 
+		df = load_dataset(data_path, dataset)
 
 	# Audio Processing
 	df = audio_processing(df)
