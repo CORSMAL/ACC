@@ -67,3 +67,50 @@ def estimations2csv(y_pred, container, sequence, action_pred):
             columns =['Container ID', 'Sequence', 'Container Capacity', 'Filling level', 'Filling type', 'action_pred'])
 
     return df_results
+
+
+def estimations2csv_2021(y_pred, id, action_pred):
+    
+    conf_id  = []
+    empty_list = []
+    fill_lev = []
+    fill_typ = []
+
+    for n in range(len(y_pred)):
+
+        conf_id.append(id[n])
+
+        empty_list.append(-1)
+
+        if y_pred[n] == 0:
+            fill_lev.append(0)
+            fill_typ.append(0)
+        elif y_pred[n] == 1:
+            fill_lev.append(1)
+            fill_typ.append(1)
+        elif y_pred[n] == 2:
+            fill_lev.append(2)
+            fill_typ.append(1)
+        elif y_pred[n] == 3:
+            fill_lev.append(1)
+            fill_typ.append(2)
+        elif y_pred[n] == 4:
+            fill_lev.append(2)
+            fill_typ.append(2)
+        elif y_pred[n] == 5:
+            fill_lev.append(1)
+            fill_typ.append(3)
+        elif y_pred[n] == 6:
+            fill_lev.append(2)
+            fill_typ.append(3)
+        else:
+            fill_lev.append(-1)
+            fill_typ.append(-1)
+
+    # df_results = pd.DataFrame(list(zip(container, sequence, cont_cap, fill_lev, fill_typ, action_pred)),
+    #         columns =['Container ID', 'Sequence', 'Container Capacity', 'Filling level', 'Filling type', 'action_pred'])
+
+    df_results = pd.DataFrame(list(zip(container, sequence, cont_cap, fill_lev, fill_typ, action_pred)),
+            columns =['Container ID', 'Sequence', 'Container Capacity', 'Filling level', 'Filling type', 'action_pred'])
+
+    return df_results

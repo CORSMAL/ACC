@@ -63,7 +63,7 @@ from methods.processing.audio_processing import audio_processing
 from methods.processing.data_processing import prepare_train_data, prepare_test_data
 from scripts.model_build import raw_model, pretrained_model
 from scripts.model_run import model_train, model_estimate
-from scripts.model_report import train_report, test_report
+from scripts.model_report import train_report, test_report, test_report_2021
 from scripts.data_visualization import plot_rand_files
 
 import pandas as pd
@@ -128,6 +128,9 @@ if __name__ == '__main__':
 		x_val = prepare_test_data(df, dataset)
 		model = pretrained_model(model_use)
 		y_pred, action_pred = model_estimate(model, x_val)
-		test_report(model_use, dataset, df, y_pred, action_pred, args.outdir)
+		if y_version == 2021:
+			test_report_2021(model_use, dataset, df, y_pred, action_pred, args.outdir)
+		else: 
+			test_report(model_use, dataset, df, y_pred, action_pred, args.outdir)
 
 	print('\nend_of_script')

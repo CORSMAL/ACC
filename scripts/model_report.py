@@ -38,7 +38,7 @@ import itertools
 import tikzplotlib
 import pickle
 
-from scripts.results_parser import estimations2csv
+from scripts.results_parser import estimations2csv, estimations2csv_2021
 
 from config import BATCH_SIZE
 
@@ -173,24 +173,25 @@ def test_report(model_use, dataset, df, y_pred, action_pred, outdir):
     abs_path = os.path.abspath(expt_path)
     print('\nEstimations exported to:\n', abs_path)
 
-# def test_report_2021(model_use, dataset, df, y_pred, action_pred, outdir):
+def test_report_2021(model_use, dataset, df, y_pred, action_pred, outdir):
 
     # Check if dir exist and if not, create
-    # path = os.path.join(outdir, 'test')
-    # if not os.path.isdir(path): os.makedirs(path)
+    path = os.path.join(outdir, 'test')
+    if not os.path.isdir(path): os.makedirs(path)
 
     # # Create new dir
-    # id_now = datetime.now().strftime('%m%d-%H%M%S')
-    # dir_name = id_now +'_'+ model_use +'_'+ dataset
-    # path = os.path.join(path, dir_name)
-    # os.makedirs(path)
+    id_now = datetime.now().strftime('%m%d-%H%M%S')
+    dir_name = id_now +'_'+ model_use +'_'+ dataset
+    path = os.path.join(path, dir_name)
+    os.makedirs(path)
 
     # # Estimations to CSV
-    # df_results = estimations2csv(y_pred, df.container.to_list(), df.sequence.to_list(), action_pred)
-    # expt_path = os.path.join(path, 'estimations.csv')
-    # df_results.to_csv(expt_path, index=False)
-    # abs_path = os.path.abspath(expt_path)
-    # print('\nEstimations exported to:\n', abs_path)
+    print(df.id)
+    df_results = estimations2csv_2021(y_pred, df.id, action_pred)
+    expt_path = os.path.join(path, 'estimations.csv')
+    df_results.to_csv(expt_path, index=False)
+    abs_path = os.path.abspath(expt_path)
+    print('\nEstimations exported to:\n', abs_path)
     
 
     
