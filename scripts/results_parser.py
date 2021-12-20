@@ -107,10 +107,6 @@ def estimations2csv_2021(y_pred, id, action_pred):
             fill_lev.append(-1)
             fill_typ.append(-1)
 
-    # df_results = pd.DataFrame(list(zip(container, sequence, cont_cap, fill_lev, fill_typ, action_pred)),
-    #         columns =['Container ID', 'Sequence', 'Container Capacity', 'Filling level', 'Filling type', 'action_pred'])
-
-    df_results = pd.DataFrame(list(zip(container, sequence, cont_cap, fill_lev, fill_typ, action_pred)),
-            columns =['Container ID', 'Sequence', 'Container Capacity', 'Filling level', 'Filling type', 'action_pred'])
+    df_results = pd.DataFrame(list(zip(conf_id, empty_list, empty_list, empty_list, empty_list, empty_list, empty_list, empty_list, fill_typ, empty_list, empty_list, empty_list, fill_lev, empty_list, empty_list, empty_list, empty_list, empty_list, empty_list, empty_list)), columns =[ 'Configuration ID', 'Container capacity', 'Container mass', 'Filling mass', 'None', 'Pasta', 'Rice', 'Water', 'Filling type', 'Empty', 'Half-full', 'Full', 'Filling level', 'Width at the top', 'Width at the bottom', 'Height', 'Object safety', 'Distance', 'Angle difference', 'Execution time'])
 
     return df_results

@@ -69,7 +69,7 @@ from scripts.data_visualization import plot_rand_files
 import pandas as pd
 import argparse
 
-from config import DATASET_PATH, OUTPUT_PATH
+from config import DATASET_PATH, OUTPUT_PATH, NDATASET_PATH
 
 # RUNTIME PROCEDURE
 if __name__ == '__main__':
@@ -101,7 +101,7 @@ if __name__ == '__main__':
 	
 	# Load data
 	if y_version == 2021:
-		df = load_dataset_2021(data_path, dataset)
+		df = load_dataset_2021(NDATASET_PATH, dataset)
 	else: 
 		df = load_dataset(data_path, dataset)
 
@@ -130,7 +130,7 @@ if __name__ == '__main__':
 		y_pred, action_pred = model_estimate(model, x_val)
 		if y_version == 2021:
 			test_report_2021(model_use, dataset, df, y_pred, action_pred, args.outdir)
-		else: 
+		else:
 			test_report(model_use, dataset, df, y_pred, action_pred, args.outdir)
 
 	print('\nend_of_script')
