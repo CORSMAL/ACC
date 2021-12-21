@@ -6,7 +6,7 @@ ACC is a convolutional-neural-network ensemble for estimating the type and level
 
 ![Alt text](acc_image.png)
 
-[[arXiv](https://arxiv.org/)]
+[[arXiv](https://arxiv.org/abs/2103.15999)]
 [[webpage](http://corsmal.eecs.qmul.ac.uk/containers_manip.html)]
 [[pre-trained models](https://zenodo.org/record/4770061#.YKPJtCbTU5k)]
 [[CCM dataset](http://corsmal.eecs.qmul.ac.uk/containers_manip.html)]
