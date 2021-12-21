@@ -6,8 +6,8 @@ ACC is a convolutional-neural-network ensemble for estimating the type and level
 
 ![Alt text](acc_image.png)
 
-[[arXiv](https://arxiv.org/)]
-[[webpage](http://corsmal.eecs.qmul.ac.uk/containers_manip.html)]
+[[arXiv](https://arxiv.org/abs/2103.15999)]
+[[webpage](http://corsmal.eecs.qmul.ac.uk/audio_classification.html)]
 [[pre-trained models](https://zenodo.org/record/4770061#.YKPJtCbTU5k)]
 [[CCM dataset](http://corsmal.eecs.qmul.ac.uk/containers_manip.html)]
 [[ACM-S2 dataset](https://zenodo.org/record/4770439#.YKPacSbTU5k)]
@@ -153,4 +153,3 @@ If you would like to file a bug report or a feature request, use the Github issu
 
 This work is licensed under the MIT License.  To view a copy of this license, see
 [LICENSE](LICENSE).
-
